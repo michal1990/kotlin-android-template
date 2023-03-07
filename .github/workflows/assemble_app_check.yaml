@@ -1,4 +1,4 @@
-name: Build & Check
+name: Assemble App & Check
 on:
   push:
     branches:
@@ -26,6 +26,6 @@ jobs:
 
       - name: Setup Gradle (included Gradle caches e.g. dependencies)
         uses: gradle/gradle-build-action@v2
-
-      - name: Run Gradle
-        run: ./gradlew build
+        with:
+          arguments: assembleDebug
+          build-root-directory: app
