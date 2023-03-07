@@ -1,6 +1,6 @@
 object GradleConfig {
     const val appNamespace = "com.mradtke.template"
-    const val applicationId = "com.radtke.template"
+    const val applicationId = "com.mradtke.template"
     const val libraryAndroidNamespace = "com.mradtke.template.library.android"
 
     const val minSdkVersion = 29
