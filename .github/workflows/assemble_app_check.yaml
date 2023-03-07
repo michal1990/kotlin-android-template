@@ -9,10 +9,7 @@ on:
 
 jobs:
   gradle:
-    strategy:
-      matrix:
-        os: [ ubuntu-latest, macos-latest, windows-latest ]
-    runs-on: ${{ matrix.os }}
+    runs-on: macos-latest #also: 'ubuntu-latest', 'windows-latest'
     if: ${{ !contains(github.event.head_commit.message, 'ci skip') }}
     steps:
       - name: Checkout Repo
@@ -24,7 +21,7 @@ jobs:
           distribution: 'adopt'
           java-version: '11'
 
-      - name: Setup Gradle (included Gradle caches e.g. dependencies)
+      - name: Setup Gradle (with cache)
         uses: gradle/gradle-build-action@v2
 
       - name: Run Gradle
