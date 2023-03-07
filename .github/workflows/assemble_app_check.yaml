@@ -26,6 +26,6 @@ jobs:
 
       - name: Setup Gradle (included Gradle caches e.g. dependencies)
         uses: gradle/gradle-build-action@v2
-        with:
-          arguments: assembleDebug
-          build-root-directory: app
+
+      - name: Run Gradle
+        run: ./gradlew :app:assembleDebug
